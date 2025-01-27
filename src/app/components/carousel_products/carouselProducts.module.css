@@ -9,34 +9,6 @@
   overflow: hidden;
 }
 
-.embla__container::before,
-.embla__container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 300px; /* Tamanho do efeito de degrade */
-  z-index: 1;
-}
-
-.embla__container::before {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    #FCF9EF,
-    rgba(255, 255, 255, 0)
-  );
-}
-
-.embla__container::after {
-  left: 10;
-  background: linear-gradient(
-    to right,
-    #FCF9EF,
-    rgba(255, 255, 255, 0)
-  );
-}
-
 .embla__container {
   display: flex;
   touch-action: pan-y pinch-zoom;

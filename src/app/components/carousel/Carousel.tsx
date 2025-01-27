@@ -7,13 +7,20 @@ import useEmblaCarousel from 'embla-carousel-react'
 
 import styles from './embla.module.css'
 
+type Image = {
+  id: number;
+  src: string;
+  alt: string;
+}
+
 type PropType = {
   slides: number[]
   options?: EmblaOptionsType
+  data: Image[]
 }
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props
+  const { slides, options, data } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay(), Fade()])
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
@@ -37,9 +44,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <section className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
-          {slides.map((index) => (
-            <div className={styles.embla__slide} key={index}>
-              <div className={styles.embla__slide__number}>{index + 1}</div>
+          {data.map((item) => (
+            <div className={styles.embla__slide} key={item.id}>
+              <img src={item.src} alt={item.alt} />
             </div>
           ))}
         </div>
