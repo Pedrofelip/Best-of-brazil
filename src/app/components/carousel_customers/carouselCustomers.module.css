@@ -3,7 +3,7 @@
     margin: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
-    --slide-size: 100px;
+    --slide-size: 130px;
   }
   .embla__viewport {
     overflow: hidden;
@@ -14,13 +14,13 @@
     margin-left: calc(var(--slide-spacing) * -1);
   }
   .embla__slide {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     transform: translate3d(0, 0, 0);
     flex: 0 0 var(--slide-size);
     min-width: 0;
     padding-left: var(--slide-spacing);
-    background-color: aqua;
+    /* background-color: aqua; */
   }
   .embla__slide > img{
     width: 100%;

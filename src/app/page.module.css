@@ -1,5 +1,5 @@
 .container_wrap{
-  width: 70%;
+  width: 65%;
   height: 100%;
   max-width: 1440px;
   position: relative;
@@ -11,6 +11,8 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  /* background-image: url("../../public/image-background-opacity.png"); */
+  /* background-color: #FCF9EF; */
 }
 
 .articles{
@@ -113,11 +115,12 @@
 
 .section_customers{
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .section_customers > h3{
   font-family: "Montserrat", serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600px;
   margin-bottom: 30px;
   display: block;

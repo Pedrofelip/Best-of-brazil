@@ -7,12 +7,6 @@
     flex-direction: column;
 }
 
-.container_wrap{
-    width: 70%;
-    max-width: 1440px;
-    /* background-color: rgba(255, 0, 0, 0.123); */
-}
-
 .grid_header_top{
     display: flex;
     flex-direction: row;
@@ -36,7 +30,7 @@
 }
 
 .search_input{
-    width: 600px;
+    width: 700px;
     height: 40px;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.300);
     padding-left: 10px;

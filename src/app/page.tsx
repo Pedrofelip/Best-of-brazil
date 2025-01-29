@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 import Carousel from "./components/carousel/Carousel";
 import CarouselProducts from "./components/carousel_products/CarouselProducts";
 import CarouselCustomers from "./components/carousel_customers/CarouselCustomers";
@@ -470,6 +471,36 @@ export default function Home() {
       src: "https://w7.pngwing.com/pngs/172/485/png-transparent-wendy-039-s-hd-logo.png",
       alt: "imagem carrousel",
     },
+    {
+      id: 16,
+      src: "https://logo.com/image-cdn/images/kts928pd/production/4513fd3a32f247c61ee3a487ff6100dfa154f83a-700x394.png?w=1920&q=72&fm=webp",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 17,
+      src: "https://1000marcas.net/wp-content/uploads/2022/07/Logo-KFC.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 18,
+      src: "https://i.pinimg.com/originals/ea/92/cc/ea92cc0b141df13a93095275323e1b50.jpg",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 19,
+      src: "https://w7.pngwing.com/pngs/733/246/png-transparent-perrier-logo-food-water-brands.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 20,
+      src: "https://w7.pngwing.com/pngs/945/486/png-transparent-7-eleven-franchising-convenience-shop-business-slurpee-broucher-company-text-rectangle-thumbnail.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 21,
+      src: "https://w7.pngwing.com/pngs/172/485/png-transparent-wendy-039-s-hd-logo.png",
+      alt: "imagem carrousel",
+    },
   ];
 
   function getRandomIndexes(array, n) {
@@ -567,24 +598,25 @@ export default function Home() {
               </Link>
             </div>
           </section>
-          <section className={styles.section_customers}>
-            <h3>Alguns de nossos clientes</h3>
-            
-            <CarouselCustomers
-              slides={SLIDES_CC}
-              options={OPTIONS_CC}
-              data = {logo_customers}
-              carousel_direction="default"
-            ></CarouselCustomers>
-            <CarouselCustomers
-              slides={SLIDES_CC}
-              options={OPTIONS_CC}
-              data = {logo_customers}
-              carousel_direction="default"
-            ></CarouselCustomers>
-          </section>
         </div>
       </main>
+      <section className={styles.section_customers}>
+        <h3>Alguns de nossos clientes</h3>
+
+        <CarouselCustomers
+          slides={SLIDES_CC}
+          options={OPTIONS_CC}
+          data={logo_customers}
+          carousel_direction="default"
+        ></CarouselCustomers>
+        <CarouselCustomers
+          slides={SLIDES_CC}
+          options={OPTIONS_CC}
+          data={logo_customers}
+          carousel_direction="default"
+        ></CarouselCustomers>
+      </section>
+      <Footer></Footer>
       {/* <div>
         <h1>Lista de Frutas</h1>
         <ul>

@@ -4,6 +4,7 @@ import { ChangeEvent, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.css";
+import container from "../../page.module.css"
 
 //criando o componente cabecalho e informando que qunado ele for usado precisa ser passado dois parametros
 export default function Header({ data, onSearch }) {
@@ -20,7 +21,7 @@ export default function Header({ data, onSearch }) {
 
   return (
     <header className={styles.header}>
-      <div className={`${styles.grid_header_top} ${styles.container_wrap}`}>
+      <div className={`${styles.grid_header_top} ${container.container_wrap}`}>
         <Image
           src="/logo-best-of-brazil.png"
           alt="Logo Best of Brazil"
@@ -44,13 +45,13 @@ export default function Header({ data, onSearch }) {
 
         <i className="fa-solid fa-cart-shopping"></i>
       </div>
-      <div className={`${styles.grid_header_bottom} ${styles.container_wrap}`}>
+      <div className={`${styles.grid_header_bottom} ${container.container_wrap}`}>
         <nav className={styles.nav_bar}>
           <Link href="/" className={styles.link}>home</Link>
           <Link href="/" className={styles.link}>produtos</Link>
           <Link href="/" className={styles.link}>sobre</Link>
           <Link href="/" className={styles.link}>contato</Link>
-          <Link href="/" className={styles.link}>localização</Link>
+          <Link href="/location" className={styles.link}>localização</Link>
           <Link href="/" className={styles.link}>lojas & parceiros</Link>
         </nav>
       </div>

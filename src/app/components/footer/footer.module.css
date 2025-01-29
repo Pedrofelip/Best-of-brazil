@@ -1,0 +1,142 @@
+.footer {
+  width: 100%;
+  background-color: #98793d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top_part {
+  padding: 100px 0;
+}
+
+.grid_first_section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.grid_first_section > h1 {
+  display: block;
+  width: 40%;
+  font-family: "Montserrat", serif;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.txt_first_section {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.txt_first_section > p {
+  font-family: "Montserrat", serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.btn_footer {
+  width: max-content;
+  padding: 10px 15px;
+  border: 0.5px solid black;
+  font-family: "Montserrat", serif;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 25px;
+}
+
+.btn_footer > i{
+    margin-left: 10px;
+}
+
+.second_section {
+  padding: 35px 0;
+}
+
+.grid_third_section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.grid_third_section > p {
+  font-family: "Montserrat", serif;
+  font-size: 20px;
+  font-weight: 400;
+  display: block;
+  width: 400px;
+}
+
+.txt_location {
+  width: 400px;
+}
+
+.txt_location > h3 {
+  font-family: "Montserrat", serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.txt_location > p {
+  font-family: "Montserrat", serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.txt_links > h3 {
+  font-family: "Montserrat", serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.link {
+  font-family: "Montserrat", serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.bottom_part {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #724c0e;
+  padding: 20px 0;
+}
+
+.grid_bottom_part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.grid_bottom_part > p {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  font-family: "Montserrat", serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.image_bottom_part {
+  display: block;
+}
+
+.social_links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30%;
+  font-size: 35px;
+}
+
+.grid_styles_links {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}

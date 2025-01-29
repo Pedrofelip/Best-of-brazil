@@ -1,0 +1,73 @@
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  /* background-image: url("../../public/image-background-opacity.png"); */
+  /* background-color: #FCF9EF; */
+}
+
+.first_section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.map {
+  width: 100%;
+  height: 70vh;
+  border-radius: 25px;
+}
+
+.card_map {
+  background-color: white;
+  width: 300px;
+  height: 470px;
+  padding: 15px;
+  border-radius: 25px;
+  position: absolute;
+  top: 20vh;
+  left: 900;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.grid_card_map {
+  width: 100%;
+}
+
+.grid_card_map > img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.grid_card_map > h3 {
+  font-family: "Montserrat", serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.grid_card_map > p {
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.btn {
+  display: block;
+  background-color: #82955e;
+  border-radius: 25px;
+  padding: 15px 20px;
+  font-family: "Montserrat", serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+.btn > i{
+    margin-left: 10px;
+}
