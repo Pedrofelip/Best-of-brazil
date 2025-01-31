@@ -49,10 +49,10 @@ export default function Header({ data, onSearch }) {
         <nav className={styles.nav_bar}>
           <Link href="/" className={styles.link}>home</Link>
           <Link href="/" className={styles.link}>produtos</Link>
-          <Link href="/" className={styles.link}>sobre</Link>
+          <Link href="/about" className={styles.link}>sobre</Link>
           <Link href="/" className={styles.link}>contato</Link>
           <Link href="/location" className={styles.link}>localização</Link>
-          <Link href="/" className={styles.link}>lojas & parceiros</Link>
+          <Link href="/partners" className={styles.link}>lojas & parceiros</Link>
         </nav>
       </div>
     </header>

@@ -12,7 +12,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    padding: 10px 0;
 }
 
 .grid_header_bottom{
@@ -20,7 +20,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 60px;
+    padding: 15px 0;
 }
 
 .search_bar{

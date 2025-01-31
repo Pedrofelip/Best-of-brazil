@@ -86,6 +86,11 @@
   font-weight: 400;
 }
 
+.txt_links{
+  display: flex;
+  flex-direction: column;
+}
+
 .txt_links > h3 {
   font-family: "Montserrat", serif;
   font-size: 22px;
@@ -97,6 +102,11 @@
   font-family: "Montserrat", serif;
   font-size: 20px;
   font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.link:hover{
+  text-decoration: underline;
 }
 
 .bottom_part {

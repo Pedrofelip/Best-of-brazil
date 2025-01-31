@@ -13,12 +13,11 @@ type Image = {
 type PropType = {
   slides: number[]
   options?: EmblaOptionsType
-  carousel_direction: string
   data: Image[]
 }
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options, data, carousel_direction} = props
+  const { slides, options, data} = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     AutoScroll({ playOnInit: true })
   ])
@@ -69,7 +68,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   }, [emblaApi])
 
   return (
-    <div className={styles.embla} dir={carousel_direction}>
+    <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
         {data.map((item) => (

@@ -1,6 +1,6 @@
 .card{
-    width: 250px;
-    height: 370px;
+    width: 260px;
+    height: 400px;
     border-radius: 25px;
     background-color: white;
     display: flex;
@@ -45,8 +45,8 @@
 }
 
 .button_know{
-    width: 170px;
-    height: 30px;
+    width: 180px;
+    height: 32px;
     background-color: #82955E;
     border-radius: 10px;
     color: black;
@@ -58,8 +58,8 @@
 }
 
 .button_add{
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 10px;
     background-color: #D9D9D9;
     color: black;

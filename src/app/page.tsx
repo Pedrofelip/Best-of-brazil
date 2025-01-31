@@ -398,47 +398,32 @@ export default function Home() {
   const logo_customers = [
     {
       id: 1,
-      src: "https://logosmarcas.net/wp-content/uploads/2020/09/Starbucks-Logo.png",
+      src: "https://logospng.org/download/starbucks/logo-starbucks-256.png",
       alt: "imagem carrousel",
     },
     {
       id: 2,
-      src: "https://w7.pngwing.com/pngs/1002/138/png-transparent-burger-king-logo-hamburger-burger-king-logo-restaurant-burger-king-text-fast-food-restaurant-signage-thumbnail.png",
+      src: "https://static.vecteezy.com/system/resources/previews/019/909/686/non_2x/burger-king-transparent-burger-king-free-free-png.png",
       alt: "imagem carrousel",
     },
     {
       id: 3,
-      src: "https://w7.pngwing.com/pngs/986/569/png-transparent-pizza-hut-take-out-logo-yum-brands-pizza-pics-food-text-logo.png",
+      src: "https://seeklogo.com/images/P/pizza-hut-logo-DBFE2E48AF-seeklogo.com.png",
       alt: "imagem carrousel",
     },
     {
       id: 4,
-      src: "https://w7.pngwing.com/pngs/496/145/png-transparent-logo-brand-fast-food-franchising-subway-subway-sandwich-food-text-logo-thumbnail.png",
+      src: "https://logos-world.net/wp-content/uploads/2023/01/Subway-Logo-2002.png",
       alt: "imagem carrousel",
     },
     {
       id: 5,
-      src: "https://e7.pngegg.com/pngimages/346/348/png-clipart-pringles-logo-cheese-fries-brand-potato-chip-others-miscellaneous-food.png",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pringles_logo.png/797px-Pringles_logo.png",
       alt: "imagem carrousel",
     },
     {
       id: 6,
-      src: "https://w7.pngwing.com/pngs/172/485/png-transparent-wendy-039-s-hd-logo.png",
-      alt: "imagem carrousel",
-    },
-    {
-      id: 7,
-      src: "https://i.pinimg.com/736x/51/9b/fa/519bfaca4362bc68af29277ffe8d6d2d.jpg",
-      alt: "imagem carrousel",
-    },
-    {
-      id: 8,
-      src: "https://blog.estudiodurer.com.br/wp-content/uploads/2022/06/1024px-Coca-Cola_bottle_cap.svg_.png",
-      alt: "imagem carrousel",
-    },
-    {
-      id: 9,
-      src: "https://e7.pngegg.com/pngimages/346/348/png-clipart-pringles-logo-cheese-fries-brand-potato-chip-others-miscellaneous-food.png",
+      src: "https://seeklogo.com/images/W/wendys-logo-75361EA3A8-seeklogo.com.png",
       alt: "imagem carrousel",
     },
     {
@@ -457,48 +442,58 @@ export default function Home() {
       alt: "imagem carrousel",
     },
     {
-      id: 13,
-      src: "https://w7.pngwing.com/pngs/733/246/png-transparent-perrier-logo-food-water-brands.png",
-      alt: "imagem carrousel",
-    },
-    {
-      id: 14,
-      src: "https://w7.pngwing.com/pngs/945/486/png-transparent-7-eleven-franchising-convenience-shop-business-slurpee-broucher-company-text-rectangle-thumbnail.png",
-      alt: "imagem carrousel",
-    },
-    {
-      id: 15,
-      src: "https://w7.pngwing.com/pngs/172/485/png-transparent-wendy-039-s-hd-logo.png",
-      alt: "imagem carrousel",
-    },
-    {
       id: 16,
       src: "https://logo.com/image-cdn/images/kts928pd/production/4513fd3a32f247c61ee3a487ff6100dfa154f83a-700x394.png?w=1920&q=72&fm=webp",
       alt: "imagem carrousel",
     },
     {
-      id: 17,
-      src: "https://1000marcas.net/wp-content/uploads/2022/07/Logo-KFC.png",
-      alt: "imagem carrousel",
-    },
-    {
       id: 18,
-      src: "https://i.pinimg.com/originals/ea/92/cc/ea92cc0b141df13a93095275323e1b50.jpg",
-      alt: "imagem carrousel",
-    },
-    {
-      id: 19,
-      src: "https://w7.pngwing.com/pngs/733/246/png-transparent-perrier-logo-food-water-brands.png",
-      alt: "imagem carrousel",
-    },
-    {
-      id: 20,
-      src: "https://w7.pngwing.com/pngs/945/486/png-transparent-7-eleven-franchising-convenience-shop-business-slurpee-broucher-company-text-rectangle-thumbnail.png",
+      src: "https://logospng.org/download/starbucks/logo-starbucks-256.png",
       alt: "imagem carrousel",
     },
     {
       id: 21,
-      src: "https://w7.pngwing.com/pngs/172/485/png-transparent-wendy-039-s-hd-logo.png",
+      src: "https://static.vecteezy.com/system/resources/previews/019/909/686/non_2x/burger-king-transparent-burger-king-free-free-png.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 31,
+      src: "https://seeklogo.com/images/P/pizza-hut-logo-DBFE2E48AF-seeklogo.com.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 41,
+      src: "https://logos-world.net/wp-content/uploads/2023/01/Subway-Logo-2002.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 51,
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pringles_logo.png/797px-Pringles_logo.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 61,
+      src: "https://seeklogo.com/images/W/wendys-logo-75361EA3A8-seeklogo.com.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 101,
+      src: "https://logo.com/image-cdn/images/kts928pd/production/4513fd3a32f247c61ee3a487ff6100dfa154f83a-700x394.png?w=1920&q=72&fm=webp",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 111,
+      src: "https://1000marcas.net/wp-content/uploads/2022/07/Logo-KFC.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 121,
+      src: "https://i.pinimg.com/originals/ea/92/cc/ea92cc0b141df13a93095275323e1b50.jpg",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 161,
+      src: "https://logo.com/image-cdn/images/kts928pd/production/4513fd3a32f247c61ee3a487ff6100dfa154f83a-700x394.png?w=1920&q=72&fm=webp",
       alt: "imagem carrousel",
     },
   ];
@@ -513,7 +508,7 @@ export default function Home() {
   }
 
   // Pegar 10 índices aleatórios
-  const randomIndex = getRandomIndexes(products, 10);
+  const randomIndex = getRandomIndexes(products, 8);
 
   // Selecionar os itens do array pelos índices aleatórios
   const randomProducts = randomIndex.map((index) => products[index]);
@@ -522,12 +517,13 @@ export default function Home() {
   const SLIDE_COUNT = 5;
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-  const OPTIONS_CP: EmblaOptionsType = { align: "start", dragFree: true };
+  const OPTIONS_CP: EmblaOptionsType = { align: "start", dragFree: true, loop: true };
   const SLIDE_COUNT_CP = 15;
   const SLIDES_CP = Array.from(Array(SLIDE_COUNT_CP).keys());
 
-  const OPTIONS_CC: EmblaOptionsType = { loop: true };
-  const SLIDE_COUNT_CC = 8;
+  const OPTIONS_CC: EmblaOptionsType = { loop: true, direction: "ltr"};
+  const OPTIONS_CC_OP: EmblaOptionsType = { loop: true, direction: "ltr"};
+  const SLIDE_COUNT_CC = 20;
   const SLIDES_CC = Array.from(Array(SLIDE_COUNT_CC).keys());
 
   //estado que contem a lista filtrada com base na pesquisa
@@ -607,13 +603,11 @@ export default function Home() {
           slides={SLIDES_CC}
           options={OPTIONS_CC}
           data={logo_customers}
-          carousel_direction="default"
         ></CarouselCustomers>
         <CarouselCustomers
           slides={SLIDES_CC}
-          options={OPTIONS_CC}
+          options={OPTIONS_CC_OP}
           data={logo_customers}
-          carousel_direction="default"
         ></CarouselCustomers>
       </section>
       <Footer></Footer>
