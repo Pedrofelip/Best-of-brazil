@@ -1,12 +1,13 @@
 import React from "react";
 
 import styles from "./product.module.css";
+import Link from "next/link";
 
 export default function Product({
+  id,
   image,
   name,
   description,
-  onClick,
   onClickBuy,
 }) {
   return (
@@ -18,9 +19,9 @@ export default function Product({
           <p>{description}</p>
           </div>
         <div className={styles.grid_button}>
-          <button onClick={onClick} className={styles.button_know}>
+          <Link href={`/product/${id}`} className={styles.button_know}>
             Conheça
-          </button>
+          </Link>
           <button onClick={onClickBuy} className={styles.button_add}>
             <i className="fas fa-cart-plus"></i>
           </button>

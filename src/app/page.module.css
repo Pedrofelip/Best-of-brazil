@@ -93,6 +93,69 @@
   margin-bottom: 30px;
 }
 
+.section_ad{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FCF9EF;
+  border-radius: 25px;
+  margin-bottom: 100px;
+}
+
+.grid_section_ad{
+  width: 100%;
+  border-radius: 25px 25px 0 0;
+  /* background-color: #46591D; */
+  background: linear-gradient(90deg, #46591D 0%, #82955E 100%);
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.top_section_ad{
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top_section_ad > h3{
+  font-family: "Montserrat", serif;
+  font-size: 18px;
+  font-weight: 600px;
+  color: white;
+}
+
+.top_section_ad > a{
+    padding: 5px 30px;
+    background-color: rgba(255, 255, 255, 0.342);
+    border-radius: 10px;
+    color: white;
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.bottom_section_ad{
+  width: 95%;
+  padding: 30px 0;
+}
+
+.bottom_section_ad > h3{
+  font-family: "Montserrat", serif;
+  font-size: 18px;
+  font-weight: 600px;
+  color: black;
+  margin-bottom: 30px;
+}
+
+.bottom_section_ad > p{
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
 .grid_our_products{
   width: 100%;
   display: flex;

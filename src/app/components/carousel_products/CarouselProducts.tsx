@@ -42,7 +42,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {data.map((item) => (
             <div className={styles.embla__slide} key={item.id}>
               {/* <div className={styles.embla__slide__number}>{index + 1}</div> */}
-              <Product image={item.image} name={item.name} description={item.description} onClick={item} onClickBuy={item}></Product>
+              <Product id={item.id} image={item.image} name={item.name} description={item.description} onClickBuy={item}></Product>
             </div>
           ))}
         </div>

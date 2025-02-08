@@ -48,7 +48,7 @@ export default function Header({ data, onSearch }) {
       <div className={`${styles.grid_header_bottom} ${container.container_wrap}`}>
         <nav className={styles.nav_bar}>
           <Link href="/" className={styles.link}>home</Link>
-          <Link href="/" className={styles.link}>produtos</Link>
+          <Link href="/products" className={styles.link}>produtos</Link>
           <Link href="/about" className={styles.link}>sobre</Link>
           <Link href="/" className={styles.link}>contato</Link>
           <Link href="/location" className={styles.link}>localização</Link>
