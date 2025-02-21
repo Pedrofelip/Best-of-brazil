@@ -91,6 +91,17 @@
   font-size: 18px;
   font-weight: 600;
   border-radius: 25px;
+  transition: all 0.3s, color 0.3s;
+}
+
+.btn_first_section:hover{
+  background-color: #94aa6a;
+  color: white;
+}
+
+.btn_first_section:active{
+  background-color: #82955e;
+  color: black;
 }
 
 .second_section {

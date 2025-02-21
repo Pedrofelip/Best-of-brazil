@@ -13,7 +13,7 @@ export default function Footer() {
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolor debitis, distinctio accusantium fuga dolores voluptatibus nesciunt rerum porro voluptate?
             </p>
-            <Link href="/" className={styles.btn_footer}>
+            <Link href="/contact" className={styles.btn_footer}>
               Entre em contato <i className="fas fa-arrow-right"></i>
             </Link>
           </div>
@@ -26,6 +26,22 @@ export default function Footer() {
             height={90}
             priority
           />
+          <div className={styles.social_links}>
+            <nav className={styles.grid_styles_links}>
+              <a href="" target="_blank">
+                <i className="fa-brands fa-square-facebook"></i>
+              </a>
+              <a href="" target="_blank">
+                <i className="fa-brands fa-square-instagram"></i>
+              </a>
+              <a href="" target="_blank">
+                <i className="fa-brands fa-square-whatsapp"></i>
+              </a>
+              <a href="" target="_blank">
+                <i className="fa-brands fa-square-x-twitter"></i>
+              </a>
+            </nav>
+          </div>
         </section>
         <section className={styles.grid_third_section}>
           <p>
@@ -59,22 +75,7 @@ export default function Footer() {
             className={styles.image_bottom_part}
             priority
           />
-          <div className={styles.social_links}>
-            <nav className={styles.grid_styles_links}>
-              <a href="" target="_blank">
-                <i className="fa-brands fa-square-facebook"></i>
-              </a>
-              <a href="" target="_blank">
-                <i className="fa-brands fa-square-instagram"></i>
-              </a>
-              <a href="" target="_blank">
-                <i className="fa-brands fa-square-whatsapp"></i>
-              </a>
-              <a href="" target="_blank">
-                <i className="fa-brands fa-square-x-twitter"></i>
-              </a>
-            </nav>
-          </div>
+          <p><a href="https://www.linkedin.com/in/pedro-felipe-barros-da-silva/" target="blank">Desenvolvido por Pedro Felipe👨🏾‍💻</a></p>
         </div>
       </section>
     </footer>

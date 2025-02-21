@@ -5,7 +5,7 @@ import { Thumb } from './CarouselThumbsButton'
 import styles from './CarouselProduct.module.css'
 
 type PropType = {
-  slides: number[]
+  slides: string[]
   options?: EmblaOptionsType
 }
 
@@ -43,9 +43,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaMainRef}>
         <div className={styles.embla__container}>
-          {slides.map((index) => (
+          {slides.map((imageUrl, index) => (
             <div className={styles.embla__slide} key={index}>
-              <div className={styles.embla__slide__number}>{index + 1}</div>
+             <img src={imageUrl} alt={`Slide ${index + 1}`} className={styles.embla__slide__image} />
             </div>
           ))}
         </div>
@@ -54,12 +54,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       <div className={styles.embla_thumbs}>
         <div className={styles.embla_thumbs__viewport} ref={emblaThumbsRef}>
           <div className={styles.embla_thumbs__container}>
-            {slides.map((index) => (
+            {slides.map((imageUrl, index) => (
               <Thumb
                 key={index}
                 onClick={() => onThumbClick(index)}
                 selected={index === selectedIndex}
-                index={index}
+                index={imageUrl}
               />
             ))}
           </div>

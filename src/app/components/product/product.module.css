@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 .card_grid{
@@ -58,7 +59,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s, color 0.3s;
 }
+
+.button_know:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .button_know:active {
+    background-color: white;
+    color: black;
+  }
 
 .button_add{
     width: 32px;
@@ -68,4 +80,15 @@
     color: black;
     border: none;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.button_add:hover {
+    color: #fff;
+    background-color: black;
+    transform: translateY(-5px);
+  }
+  
+  .button_add:active {
+    transform: translateY(0);
+  }

@@ -45,6 +45,12 @@
   font-size: 18px;
   font-weight: 600;
   border-radius: 25px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn_footer:hover{
+  background-color: black;
+  color: white;
 }
 
 .btn_footer > i{
@@ -53,6 +59,8 @@
 
 .second_section {
   padding: 35px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .grid_third_section {
@@ -125,6 +133,7 @@
 
 .grid_bottom_part > p {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
   width: 30%;
@@ -133,13 +142,18 @@
   font-weight: 400;
 }
 
+.grid_bottom_part > p > a:hover{
+  text-decoration: underline;
+}
+
 .image_bottom_part {
   display: block;
 }
 
 .social_links {
+  margin-top: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   width: 30%;
   font-size: 35px;

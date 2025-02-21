@@ -1,0 +1,149 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com 50% de opacidade */
+  z-index: 999; /* Coloca o overlay acima de outros elementos */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 310px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  padding: 15px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.cabecalho_sidebar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cabecalho_sidebar > h2 {
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.main_sidebar {
+  width: 100%;
+  height: 75vh;
+  overflow-y: scroll;
+  border-bottom: 0.5 solid rgba(0, 0, 0, 0.301);
+}
+
+.main_sidebar::-webkit-scrollbar {
+  width: 9px; /* width of the entire scrollbar */
+}
+
+.main_sidebar::-webkit-scrollbar-track {
+  background: white; /* color of the tracking area */
+}
+
+.main_sidebar::-webkit-scrollbar-thumb {
+  background-color: black; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid white; /* creates padding around scroll thumb */
+}
+
+.item_list {
+  padding: 5px;
+  /* background-color: bisque; */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: all 0.2s, color 0.3s;
+}
+
+.item_list:hover{
+  background-color: rgba(128, 128, 128, 0.100);
+}
+
+.item_list:active{
+  transform: scale(0.9);
+}
+
+.item_list > img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.item_list > div > h3 {
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.item_list > div > p {
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.total {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.button {
+  width: 100%;
+  height: 50px;
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: #82955e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s, color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+}
+
+.button:active {
+  background-color: white;
+  color: black;
+}

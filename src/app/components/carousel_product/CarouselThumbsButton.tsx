@@ -3,7 +3,7 @@ import styles from './CarouselProduct.module.css'
 
 type PropType = {
   selected: boolean
-  index: number
+  index: string
   onClick: () => void
 }
 
@@ -21,7 +21,7 @@ export const Thumb: React.FC<PropType> = (props) => {
         type="button"
         className={styles.embla_thumbs__slide__number}
       >
-        {index + 1}
+        <img src={index} alt="" />
       </button>
     </div>
   )

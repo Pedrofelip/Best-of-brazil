@@ -14,13 +14,12 @@ type Image = {
 }
 
 type PropType = {
-  slides: number[]
   options?: EmblaOptionsType
   data: Image[]
 }
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options, data } = props
+  const { options, data } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay(), Fade()])
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {

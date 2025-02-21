@@ -4,10 +4,14 @@ import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import styles from "./page.module.css";
 import container from "../page.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
+import CartContext from "@/data/contexts/CartContext";
 
 export default function Partners() {
+
+  const {cartItems, products, randomProducts, addProductToCart} = useContext(CartContext)
+  
   const [items, setItems] = useState([
     "Apple",
     "Banana",
@@ -94,7 +98,7 @@ export default function Partners() {
 
   return (
     <>
-      <Header data={items} onSearch={handleSearch}></Header>
+      <Header data={items} onSearch={handleSearch} cartItems={cartItems}></Header>
       <main className={styles.main}>
         <div className={container.container_wrap}>
             <section className={styles.first_section}>
@@ -102,7 +106,7 @@ export default function Partners() {
                     <h3>Lojas & Parceiros</h3>
                     <h1>Contrary to popular belief, Lorem Ipsum is not simply</h1>
                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old contrary to popular belief, Lorem Ipsum is not simply random text.</p>
-                    <Link href="" className={styles.btn_first_section}>Conheça nossos clientes</Link>
+                    <Link href="#partners" className={styles.btn_first_section}>Conheça nossos clientes</Link>
                 </div>
                 <div className={styles.img_first_section}>
                     <div className={styles.img_left}>
@@ -117,7 +121,7 @@ export default function Partners() {
                     </div>
                 </div>
             </section>
-            <section className={styles.second_section}>
+            <section className={styles.second_section} id="partners">
                 <h2>Empresas que trabalhamos</h2>
 
                 <div className={styles.grid_partners}>

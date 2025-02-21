@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import styles from "./page.module.css";
@@ -9,8 +9,12 @@ import CarouselLocation from '../components/carousel_location/CarouselLocation'
 import { EmblaOptionsType } from 'embla-carousel'
 import { useState } from "react";
 import '../components/carousel_location/CarouselLocation.css'
+import CartContext from '@/data/contexts/CartContext';
 
 export default function Location() {
+
+  const {cartItems, products, randomProducts, addProductToCart} = useContext(CartContext)
+
   const [items, setItems] = useState([
     "Apple",
     "Banana",
@@ -75,7 +79,7 @@ export default function Location() {
 
   return (
     <>
-      <Header data={items} onSearch={handleSearch}></Header>
+      <Header data={items} onSearch={handleSearch} cartItems={cartItems}></Header>
       <main className={styles.main}>
         <div className={container.container_wrap}>
           <section className={styles.first_section}>

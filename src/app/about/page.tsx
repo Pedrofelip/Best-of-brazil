@@ -4,10 +4,12 @@ import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import styles from "./page.module.css";
 import container from "../page.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
+import CartContext from "@/data/contexts/CartContext";
 
 export default function Partners() {
+  const {cartItems, products, randomProducts, addProductToCart} = useContext(CartContext)
   const [items, setItems] = useState([
     "Apple",
     "Banana",
@@ -54,7 +56,7 @@ export default function Partners() {
 
   return (
     <>
-      <Header data={items} onSearch={handleSearch}></Header>
+      <Header data={items} onSearch={handleSearch} cartItems={cartItems}></Header>
       <main className={styles.main}>
         <div className={container.container_wrap}>
           <section className={styles.first_section}>
