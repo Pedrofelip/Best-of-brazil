@@ -4,7 +4,7 @@ import CartContext from "@/data/contexts/CartContext";
 import Link from "next/link";
 
 const CartSidebar = ({ isOpen, closeSidebar, cartItems }) => {
-  const { products, randomProducts, addProductToCart } =
+  const { products, randomProducts, addProductToCart, removeProductFromCart, closeCart } =
     useContext(CartContext);
 
   return (
@@ -25,16 +25,20 @@ const CartSidebar = ({ isOpen, closeSidebar, cartItems }) => {
           ) : (
             <ul>
               {cartItems.map((item, index) => (
-                <Link  href={`/product/${item.id}`}>
-                  <li key={index} className={styles.item_list}>
+                <li key={index} className={styles.item_list}>
+                  <Link href={`/product/${item.id}`} className={styles.item} onClick={closeCart}>
                     <img src={item.image[0]} alt="" />
                     <div>
                       <h3>{item.name}</h3>
                       <p>{item.producedBy}</p>
                       <p>{item.weight}</p>
                     </div>
-                  </li>
-                </Link>
+                  </Link>
+                  <i
+                    className="fa-regular fa-trash-can"
+                    onClick={() => removeProductFromCart(item)}
+                  ></i>
+                </li>
               ))}
             </ul>
           )}
@@ -50,7 +54,13 @@ const CartSidebar = ({ isOpen, closeSidebar, cartItems }) => {
             }
           </span>
         </div>
-        <Link href="/order" className={styles.button}>Enviar pedido</Link>
+        {cartItems.length === 0 ? (
+          <button className={styles.button_disable}>Finalizar pedido</button>
+        ) : (
+          <Link href="/order" className={styles.button}>
+          Finalizar pedido
+        </Link>
+        )}
       </div>
     </>
   );

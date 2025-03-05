@@ -10,40 +10,12 @@ import Product from "../components/product/Product";
 import CarouselProducts from "../components/carousel_products/CarouselProducts";
 import { EmblaOptionsType } from "embla-carousel";
 import CartContext from "@/data/contexts/CartContext";
+import CarouselFilter from "../components/carousel_customer_filter/CarouselFilter";
+import ScrollButton from "../components/scroll_button/ScrollButton";
 
 export default function Products() {
-
-  const {cartItems, products, randomProducts, addProductToCart} = useContext(CartContext)
-
-  const [items, setItems] = useState([
-    "Apple",
-    "Banana",
-    "Orange",
-    "Pineapple",
-    "Mango",
-    "Grapes",
-  ]);
-
-  const [filteredItems, setFilteredItems] = useState(items);
-
-  const handleSearch = (query: any) => {
-    if (!query) {
-      setFilteredItems(items); // Se não houver pesquisa, mostra todos os itens
-      return;
-    }
-    setFilteredItems(
-      items.filter((item) => item.toLowerCase().includes(query.toLowerCase()))
-    );
-  };
-
-  function getRandomIndexes(array, n) {
-    const indexes = new Set();
-    while (indexes.size < n) {
-      const randomIndex = Math.floor(Math.random() * array.length);
-      indexes.add(randomIndex);
-    }
-    return [...indexes];
-  }
+  const { cartItems, products, randomProducts, addProductToCart } =
+    useContext(CartContext);
 
   const OPTIONS_CP: EmblaOptionsType = {
     align: "start",
@@ -51,21 +23,38 @@ export default function Products() {
     loop: true,
   };
 
+  const OPTIONS: EmblaOptionsType = {
+    align: "start",
+    dragFree: true,
+    loop: true,
+  };
+
   return (
     <>
-      <Header data={items} onSearch={handleSearch} cartItems={cartItems}></Header>
+    <ScrollButton></ScrollButton>
+      <Header
+      ></Header>
       <main className={styles.main}>
         <div className={container.container_wrap}>
+          <section className={styles.filter_section}>
+            <div>
+              <h2>Filtrar por empresa</h2>
+              <CarouselFilter
+                slides={products}
+                options={OPTIONS}
+              ></CarouselFilter>
+            </div>
+          </section>
           <section className={styles.first_section}>
             <section className={styles.section_products_ascent}>
               <div className={styles.grid_section_products}>
-                <h3>Destaque</h3>
+                <h3></h3>
                 <div className={styles.grid_our_products}>
                   {products.slice(0, 1).map((item) => (
                     <Product
-                    key={item.id}
-                    product={item}
-                    addToCart={addProductToCart}
+                      key={item.id}
+                      product={item}
+                      addToCart={addProductToCart}
                     ></Product>
                   ))}
                 </div>
@@ -74,9 +63,7 @@ export default function Products() {
             <section className={styles.section_products_ascent_carousel}>
               <div className={styles.grid_section_products}>
                 <h3></h3>
-                <CarouselProducts
-                  options={OPTIONS_CP}
-                ></CarouselProducts>
+                <CarouselProducts options={OPTIONS_CP}></CarouselProducts>
               </div>
             </section>
           </section>
@@ -86,9 +73,9 @@ export default function Products() {
               <div className={styles.grid_our_products}>
                 {randomProducts.slice(0, 4).map((item) => (
                   <Product
-                  key={item.id}
-                  product={item}
-                  addToCart={addProductToCart}
+                    key={item.id}
+                    product={item}
+                    addToCart={addProductToCart}
                   ></Product>
                 ))}
               </div>
@@ -100,9 +87,9 @@ export default function Products() {
               <div className={styles.grid_our_products}>
                 {products.map((item) => (
                   <Product
-                  key={item.id}
-                  product={item}
-                  addToCart={addProductToCart}
+                    key={item.id}
+                    product={item}
+                    addToCart={addProductToCart}
                   ></Product>
                 ))}
               </div>

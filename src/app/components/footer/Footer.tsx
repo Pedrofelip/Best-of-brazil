@@ -56,11 +56,11 @@ export default function Footer() {
           <div className={styles.txt_links}>
             <h3>Links Uteis</h3>
             <Link href="/" className={styles.link}>Home</Link>
-            <Link href="/" className={styles.link}>Produtos</Link>
-            <Link href="/" className={styles.link}>Sobre</Link>
-            <Link href="/" className={styles.link}>Contato</Link>
-            <Link href="/" className={styles.link}>Localização</Link>
-            <Link href="/" className={styles.link}>Lojas & Parceiros</Link>
+            <Link href="/products" className={styles.link}>Produtos</Link>
+            <Link href="/about" className={styles.link}>Sobre</Link>
+            <Link href="/contact" className={styles.link}>Contato</Link>
+            <Link href="/location" className={styles.link}>Localização</Link>
+            <Link href="/partners" className={styles.link}>Lojas & Parceiros</Link>
           </div>
         </section>
       </section>

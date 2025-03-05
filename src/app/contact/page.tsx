@@ -8,31 +8,9 @@ import { useContext, useState } from "react";
 import CartContext from "@/data/contexts/CartContext";
 
 export default function Contact() {
-  const {cartItems, products, randomProducts, addProductToCart} = useContext(CartContext)
-  const [items, setItems] = useState([
-    "Apple",
-    "Banana",
-    "Orange",
-    "Pineapple",
-    "Mango",
-    "Grapes",
-  ]);
-
-  const [filteredItems, setFilteredItems] = useState(items);
-
-  const handleSearch = (query: any) => {
-    if (!query) {
-      setFilteredItems(items); // Se não houver pesquisa, mostra todos os itens
-      return;
-    }
-    setFilteredItems(
-      items.filter((item) => item.toLowerCase().includes(query.toLowerCase()))
-    );
-  };
-
   return (
     <>
-      <Header data={items} onSearch={handleSearch} cartItems={cartItems}></Header>
+      <Header></Header>
       <main className={styles.main}>
         <div className={container.container_wrap}>
           <section className={styles.first_section}>
@@ -79,7 +57,7 @@ export default function Contact() {
                     </div>
                     <div className={styles.grid_input}>
                         <label htmlFor="">Descrição</label>
-                        <textarea type="text" placeholder="" className={styles.text_area}/>
+                        <textarea type="text" placeholder="Descreva o assunto..." className={styles.text_area}/>
                     </div>
                     <div className={styles.grid_btn}>
                         <button className={styles.btn_form}>Entre em contato</button>

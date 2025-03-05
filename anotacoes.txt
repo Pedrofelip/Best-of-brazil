@@ -5,3 +5,31 @@ h1 font 60 700
 padding de cada seção 30px 0
 
 margin do texto ate os pordutos 30px
+
+
+
+------- reta final --------
+
+-fazer a verificação para que se o carrinho estiver vazio a pessoa não consiga clicar no botão✅
+-função de excluir item do carrinho✅
+-melhorar o alert do card✅
+-localstorage✅
+-fazer a função da barra de pesquisa (linkar e criar a pagina de resultado)✅
+-fazer a função do cabecalho aparecer✅
+-estilização dos articles✅
+
+
+-fazer a função de filtrar por empresa
+
+-ajustar o carrosel dos clientes
+
+-colocar a seção de premios do pordutos
+-melhorar a seção de video
+
+-FAZER O RESPONSIVO
+
+-ver a cor de fundo das seçoes dos cards --
+-revisar e trocar as imagens e icones de logo --
+-função de enviar email (contato) --
+-fazer o envio de email do pedido --
+-favicon --

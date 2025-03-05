@@ -6,6 +6,7 @@ import {
   usePrevNextButtons
 } from './CarouselLocationButtons'
 import useEmblaCarousel from 'embla-carousel-react'
+import stylesCarousel from './CarouselLocation.module.css'
 
 type Card = {
   id: number;
@@ -34,26 +35,26 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi)
 
   return (
-    <section className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
+    <section className={stylesCarousel.embla}>
+      <div className={stylesCarousel.embla__viewport} ref={emblaRef}>
+        <div className={stylesCarousel.embla__container}>
           {data.map((item) => (
-            <div className="embla__slide" key={item.id}>
-              <article className="embla__slide__number">
-                <div className="grid_card_map">
+            <div className={stylesCarousel.embla__slide} key={item.id}>
+              <article className={stylesCarousel.embla__slide__number}>
+                <div className={stylesCarousel.grid_card_map}>
                 <img src={item.image} alt="" />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
                 </div>
-                <a href={item.src} className="btn">Ver no mapa <i className="fa-solid fa-location-dot"></i></a>
+                <a href={item.src} className={stylesCarousel.btn}>Ver no mapa <i className="fa-solid fa-location-dot"></i></a>
             </article>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="embla__controls">
-        <div className="embla__buttons">
+      <div className={stylesCarousel.embla__controls}>
+        <div className={stylesCarousel.embla__buttons}>
           <PrevButton onClick={() => {onPrevButtonClick(); handleClick()}} disabled={prevBtnDisabled} />
           <NextButton onClick={() => {onNextButtonClick(); handleClick()}} disabled={nextBtnDisabled} />
         </div>

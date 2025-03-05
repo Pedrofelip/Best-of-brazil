@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const CartContext = createContext({} as any);
 export default CartContext;
@@ -291,41 +291,184 @@ export function CartProvider(props: any) {
     },
   ]);
 
+  // sidebar state
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const openCart = () => setIsCartOpen(true);
+  const closeCart = () => setIsCartOpen(false);
+
+  useEffect(() => {
+    const storedCartItems = JSON.parse(localStorage.getItem('cart') || '[]');
+    setCartItems(storedCartItems);
+  }, []);
+
   function getRandomIndexes(array, n) {
-      const indexes = new Set();
-      while (indexes.size < n) {
-        const randomIndex = Math.floor(Math.random() * array.length);
-        indexes.add(randomIndex);
-      }
-      return [...indexes];
+    const indexes = new Set();
+    while (indexes.size < n) {
+      const randomIndex = Math.floor(Math.random() * array.length);
+      indexes.add(randomIndex);
     }
-  
-    // Pegar 10 índices aleatórios
-    const randomIndex = getRandomIndexes(products, 10);
-  
-    // Selecionar os itens do array pelos índices aleatórios
-    const randomProducts = randomIndex.map((index) => products[index]);
+    return [...indexes];
+  }
+
+  // Pegar 10 índices aleatórios
+  const randomIndex = getRandomIndexes(products, 10);
+
+  // Selecionar os itens do array pelos índices aleatórios
+  const randomProducts = randomIndex.map((index) => products[index]);
+
+  const logo_customers = [
+    {
+      id: 1,
+      src: "https://logospng.org/download/starbucks/logo-starbucks-256.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 2,
+      src: "https://static.vecteezy.com/system/resources/previews/019/909/686/non_2x/burger-king-transparent-burger-king-free-free-png.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 3,
+      src: "https://seeklogo.com/images/P/pizza-hut-logo-DBFE2E48AF-seeklogo.com.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 4,
+      src: "https://logos-world.net/wp-content/uploads/2023/01/Subway-Logo-2002.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 5,
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pringles_logo.png/797px-Pringles_logo.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 6,
+      src: "https://seeklogo.com/images/W/wendys-logo-75361EA3A8-seeklogo.com.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 10,
+      src: "https://logo.com/image-cdn/images/kts928pd/production/4513fd3a32f247c61ee3a487ff6100dfa154f83a-700x394.png?w=1920&q=72&fm=webp",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 11,
+      src: "https://1000marcas.net/wp-content/uploads/2022/07/Logo-KFC.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 12,
+      src: "https://i.pinimg.com/originals/ea/92/cc/ea92cc0b141df13a93095275323e1b50.jpg",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 16,
+      src: "https://logo.com/image-cdn/images/kts928pd/production/4513fd3a32f247c61ee3a487ff6100dfa154f83a-700x394.png?w=1920&q=72&fm=webp",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 18,
+      src: "https://logospng.org/download/starbucks/logo-starbucks-256.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 21,
+      src: "https://static.vecteezy.com/system/resources/previews/019/909/686/non_2x/burger-king-transparent-burger-king-free-free-png.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 31,
+      src: "https://seeklogo.com/images/P/pizza-hut-logo-DBFE2E48AF-seeklogo.com.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 41,
+      src: "https://logos-world.net/wp-content/uploads/2023/01/Subway-Logo-2002.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 51,
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pringles_logo.png/797px-Pringles_logo.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 61,
+      src: "https://seeklogo.com/images/W/wendys-logo-75361EA3A8-seeklogo.com.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 101,
+      src: "https://logo.com/image-cdn/images/kts928pd/production/4513fd3a32f247c61ee3a487ff6100dfa154f83a-700x394.png?w=1920&q=72&fm=webp",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 111,
+      src: "https://1000marcas.net/wp-content/uploads/2022/07/Logo-KFC.png",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 121,
+      src: "https://i.pinimg.com/originals/ea/92/cc/ea92cc0b141df13a93095275323e1b50.jpg",
+      alt: "imagem carrousel",
+    },
+    {
+      id: 161,
+      src: "https://logo.com/image-cdn/images/kts928pd/production/4513fd3a32f247c61ee3a487ff6100dfa154f83a-700x394.png?w=1920&q=72&fm=webp",
+      alt: "imagem carrousel",
+    },
+  ];
 
   // Função para adicionar um produto ao carrinho
   const addProductToCart = (product: any) => {
     setCartItems((prevCartItems: any) => {
-      const isProductInCart = prevCartItems.some((item) => item.id === product.id);
+      const isProductInCart = prevCartItems.some(
+        (item) => item.id === product.id
+      );
       if (isProductInCart) {
         return prevCartItems; // Se já estiver no carrinho, não adiciona
       }
-      return [...prevCartItems, product]; // Caso contrário, adiciona o produto
+      // return [...prevCartItems, product]; // Caso contrário, adiciona o produto
+
+      const updatedCart = [...prevCartItems, product];
+
+      // Atualiza o localStorage com o carrinho modificado
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+      return updatedCart;
     });
-    alert(`produto ${product.name}`)
+    setIsCartOpen(true)
   };
 
   // Função para remover um produto do carrinho
-  const removeProductFromCart = (productId) => {
-    setCartItems((prevCartItems) => 
-      prevCartItems.filter((item) => item.id !== productId)
-    );
+  const removeProductFromCart = (product: any) => {
+    setCartItems((prevCartItems) => {
+      // prevCartItems.filter((item) => item.id !== product.id)
+      const updatedCart = prevCartItems.filter((item) => item.id !== product.id);
+
+      // Atualiza o localStorage com o carrinho modificado
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+      return updatedCart;
+  });
   };
+
   return (
-    <CartContext.Provider value={{ cartItems, products, randomProducts, addProductToCart }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        products,
+        randomProducts,
+        isCartOpen,
+        logo_customers,
+        openCart,
+        closeCart,
+        addProductToCart,
+        removeProductFromCart,
+      }}
+    >
       {props.children}
     </CartContext.Provider>
   );

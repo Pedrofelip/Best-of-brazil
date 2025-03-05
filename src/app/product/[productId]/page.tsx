@@ -12,31 +12,11 @@ import ProductCard from "@/app/components/product/Product";
 import CarouselProduct from '../../components/carousel_product/CarouselProduct'
 import { EmblaOptionsType } from 'embla-carousel'
 import CartContext from "@/data/contexts/CartContext";
+import ScrollButton from "@/app/components/scroll_button/ScrollButton";
 
 export default function Product({ params }) {
 
   const {cartItems, products, randomProducts, addProductToCart} = useContext(CartContext)
-
-  const [items, setItems] = useState([
-    "Apple",
-    "Banana",
-    "Orange",
-    "Pineapple",
-    "Mango",
-    "Grapes",
-  ]);
-
-  const [filteredItems, setFilteredItems] = useState(items);
-
-  const handleSearch = (query: any) => {
-    if (!query) {
-      setFilteredItems(items); // Se não houver pesquisa, mostra todos os itens
-      return;
-    }
-    setFilteredItems(
-      items.filter((item) => item.toLowerCase().includes(query.toLowerCase()))
-    );
-  };
 
   // Função que separa um objeto com base no ID fornecido
   function filterById(id: any) {
@@ -50,7 +30,8 @@ export default function Product({ params }) {
 
   return (
     <>
-      <Header data={items} onSearch={handleSearch} cartItems={cartItems}></Header>
+    <ScrollButton></ScrollButton>
+      <Header></Header>
       <main className={styles.main}>
         <div className={container.container_wrap}>
           <section className={styles.first_section}>

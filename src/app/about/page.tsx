@@ -9,29 +9,6 @@ import Link from "next/link";
 import CartContext from "@/data/contexts/CartContext";
 
 export default function Partners() {
-  const {cartItems, products, randomProducts, addProductToCart} = useContext(CartContext)
-  const [items, setItems] = useState([
-    "Apple",
-    "Banana",
-    "Orange",
-    "Pineapple",
-    "Mango",
-    "Grapes",
-  ]);
-
-  const [filteredItems, setFilteredItems] = useState(items);
-
-  const handleSearch = (query: any) => {
-    if (!query) {
-      setFilteredItems(items); // Se não houver pesquisa, mostra todos os itens
-      return;
-    }
-    setFilteredItems(
-      items.filter((item) => item.toLowerCase().includes(query.toLowerCase()))
-    );
-  };
-
-  
 
   const card_info = [
     {
@@ -56,7 +33,7 @@ export default function Partners() {
 
   return (
     <>
-      <Header data={items} onSearch={handleSearch} cartItems={cartItems}></Header>
+      <Header></Header>
       <main className={styles.main}>
         <div className={container.container_wrap}>
           <section className={styles.first_section}>
