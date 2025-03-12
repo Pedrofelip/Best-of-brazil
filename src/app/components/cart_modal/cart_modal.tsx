@@ -57,7 +57,7 @@ const CartSidebar = ({ isOpen, closeSidebar, cartItems }) => {
         {cartItems.length === 0 ? (
           <button className={styles.button_disable}>Finalizar pedido</button>
         ) : (
-          <Link href="/order" className={styles.button}>
+          <Link href="/order" className={styles.button} onClick={closeSidebar}>
           Finalizar pedido
         </Link>
         )}

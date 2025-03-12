@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 
-import styles from "./product.module.css";
+import styles from "./card.module.css";
 import Link from "next/link";
 import CartContext from "@/data/contexts/CartContext";
 
-export default function Product({ product, addToCart }) {
+export default function Card({ product, addToCart }) {
   const { cartItems, products, randomProducts, addProductToCart } =
     useContext(CartContext);
 

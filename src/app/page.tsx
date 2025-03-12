@@ -8,11 +8,13 @@ import Footer from "./components/footer/Footer";
 import Carousel from "./components/carousel/Carousel";
 import CarouselProducts from "./components/carousel_products/CarouselProducts";
 import CarouselCustomers from "./components/carousel_customers/CarouselCustomers";
+import CarouselArticles from "./components/carousel_articles/carouselArticles";
 import { useState } from "react";
 
 import { EmblaOptionsType } from "embla-carousel";
 import Link from "next/link";
 import Product from "./components/product/Product";
+import Card from "./components/card/Card";
 import CartContext from "@/data/contexts/CartContext";
 import ScrollButton from "./components/scroll_button/ScrollButton";
 
@@ -28,22 +30,27 @@ export default function Home() {
   const data = [
     {
       id: 1,
-      icon: "fa-solid fa-home",
+      icon: "fa-regular fa-circle-user",
       title: "Página Inicial",
-      description: "Acesse o conteúdo principal da nossa plataforma.",
+      description: "Acesse o conteúdo.",
     },
     {
       id: 2,
-      icon: "fa-solid fa-users",
+      icon: "fa-regular fa-credit-card",
       title: "Usuários",
-      description: "Gerencie os usuários cadastrados e suas permissões.",
+      description: "Gerencie permissões.",
     },
     {
       id: 3,
-      icon: "fa-solid fa-cogs",
+      icon: "fa-regular fa-lightbulb",
       title: "Configurações",
-      description:
-        "Configure as preferências da plataforma de acordo com suas necessidades.",
+      description: "Configure preferências.",
+    },
+    {
+      id: 4,
+      icon: "fa-regular fa-envelope",
+      title: "Página Inicial",
+      description: "Acesse o conteúdo.",
     },
   ];
 
@@ -73,8 +80,19 @@ export default function Home() {
     loop: true,
   };
 
-  const OPTIONS_CC: EmblaOptionsType = { loop: true, direction: "ltr" };
-  const OPTIONS_CC_OP: EmblaOptionsType = { loop: true, direction: "ltr" };
+  const OPTIONS_CC: EmblaOptionsType = {
+    loop: true,
+    direction: "ltr",
+    autoplay: 10000,
+    speed: 10000,
+  };
+  const OPTIONS_CC_OP: EmblaOptionsType = {
+    loop: true,
+    direction: "ltr",
+    autoplay: 10000,
+    speed: 10000,
+  };
+  const OPTIONS_CA: EmblaOptionsType = {}
 
   //estado que contem a lista filtrada com base na pesquisa
   // const [filteredItems, setFilteredItems] = useState(cartItems);
@@ -101,15 +119,26 @@ export default function Home() {
           <section className={styles.articles}>
             {data.map((item) => (
               <article className={styles.article_banner}>
-                <div className={styles.top_article}>
+                {/* <div className={styles.top_article}>
                   <i className={`${item.icon}`}></i>
                   <h3>{item.title}</h3>
                 </div>
                 <div className={styles.bottom_article}>
                   <p>{item.description}</p>
+                </div> */}
+                <div className={styles.grid_article_banner}>
+                  <i className={`${item.icon} ${styles.icon_article}`}></i>
+
+                  <div className={styles.grid_text_article}>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
                 </div>
               </article>
             ))}
+          </section>
+          <section className={styles.articles_responsive}>
+            <CarouselArticles slides={data} options={OPTIONS_CA} />
           </section>
           <section className={styles.section_products}>
             <div className={styles.grid_section_products}>
@@ -162,11 +191,11 @@ export default function Home() {
               <h3>Nossos produtos</h3>
               <div className={styles.grid_our_products}>
                 {randomProducts.slice(0, 8).map((item: any) => (
-                  <Product
+                  <Card
                     key={item.id}
                     product={item}
                     addToCart={addProductToCart}
-                  ></Product>
+                  ></Card>
                 ))}
               </div>
               <Link href="/products" className={styles.link_more_products}>

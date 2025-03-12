@@ -2,6 +2,8 @@ texto normal font 16 400
 h3 font 18 600
 h1 font 60 700
 
+h1 28 responsivo
+
 padding de cada seção 30px 0
 
 margin do texto ate os pordutos 30px
@@ -20,16 +22,26 @@ margin do texto ate os pordutos 30px
 
 
 -fazer a função de filtrar por empresa
-
 -ajustar o carrosel dos clientes
-
 -colocar a seção de premios do pordutos
 -melhorar a seção de video
-
--FAZER O RESPONSIVO
+-criar informativo para pedido feito
+-criar informativo para produto ja esta no carrinho
 
 -ver a cor de fundo das seçoes dos cards --
 -revisar e trocar as imagens e icones de logo --
 -função de enviar email (contato) --
 -fazer o envio de email do pedido --
 -favicon --
+
+RESPONSIVO
+
+-HOME
+-PRODUTOS
+-SOBRE
+-contato
+-LOCALIZAÇÃO
+-PARCEIROS
+-ORDER
+-PRODUTO
+-PESQUISA PRODUTOS

@@ -25,6 +25,7 @@ export default function Footer() {
             width={90}
             height={90}
             priority
+            className={styles.image_top_part}
           />
           <div className={styles.social_links}>
             <nav className={styles.grid_styles_links}>

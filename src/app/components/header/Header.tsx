@@ -7,6 +7,7 @@ import styles from "./header.module.css";
 import container from "../../page.module.css";
 import CartSidebar from "../cart_modal/cart_modal";
 import CartContext from "@/data/contexts/CartContext";
+import ResponsiveMenu from "../responsive_menu/ResponsiveMenu";
 
 //criando o componente cabecalho e informando que qunado ele for usado precisa ser passado dois parametros
 export default function Header({}) {
@@ -47,18 +48,18 @@ export default function Header({}) {
   // Função para tratar a perda de foco do input
   const handleBlur = () => {
     // Usando setTimeout para atrasar a remoção de foco
-  setTimeout(() => {
-    setIsFocused(false);
-  }, 100); // Espera 100ms antes de remover o foco
+    setTimeout(() => {
+      setIsFocused(false);
+    }, 100); // Espera 100ms antes de remover o foco
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
-      
+
       if (query.length > 0) {
         // Aqui você pode navegar para a página do produto ou fazer qualquer ação
-        window.location.href = `/searchProducts/${query}`;  // Exemplo de redirecionamento
+        window.location.href = `/searchProducts/${query}`; // Exemplo de redirecionamento
       }
     }
   };
@@ -68,101 +69,214 @@ export default function Header({}) {
 
   return (
     <header className={styles.header}>
-      <div className={`${styles.grid_header_top} ${container.container_wrap}`}>
-        <Link href="/">
-          <Image
-            src="/logo-best-of-brazil.png"
-            alt="Logo Best of Brazil"
-            width={70}
-            height={70}
-            priority
-          />
-        </Link>
-
-        <div className={styles.search_bar}>
-          <input
-            type="text"
-            placeholder="Pesquisar"
-            value={query}
-            //chamando a função sempre que o valor alterar
-            onChange={handleChange}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onKeyDown={handleKeyDown}
-            className={styles.search_input}
-          />
-          <hr className={styles.search_hr} />
-          <i className={`${"fas fa-search"} ${styles.search_icon}`}></i>
+      <div className={styles.header_info}>
+        <div className={`${container.container_wrap}`}>
+          <p>Lorem ipsum dolor sit amet consectetur</p>
+          <Link href="" className={styles.header_info_link}>
+            conheça
+          </Link>
         </div>
-
-        <button onClick={openCart} className={styles.shop_btn}>
-          <i className="fa-solid fa-cart-shopping"></i>
-          <span>{cartItems.length}</span>
-        </button>
-
-        {!isFocused ? (
-          <></>
-        ) : (
-          <>
-            <div className={styles.result_serch}>
-              
-              {query === '' ? (<></>) : (
-                <p>filtrar por:</p>
-              )}
-              {query === '' ? (<></>) : (
-                <Link href={`/searchProducts/${query}`} className={styles.link_result}>
-                <span>
-                  <i className={`${"fas fa-search"}`}></i>
-                  {query}
-                </span>
-              </Link>
-              )}
-              {filteredItems.length <= 0  ? (<></>) : (
-                <p>produtos encontrados</p>
-              )}
-              {filteredItems.map((item) => (
-                <Link href={`/product/${item.id}`} key={item.id} className={styles.link_result}>
-                  <span>
-                    <i className={`${"fas fa-search"}`}></i>
-                    {item.name}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </>
-        )}
-
-        {/* {cartItems.length === 0 ? (<span></span>) : (<span>{cartItems.length}</span>)} */}
-
-        <CartSidebar
-          isOpen={isCartOpen}
-          closeSidebar={closeCart}
-          cartItems={cartItems}
-        />
       </div>
-      <div
-        className={`${styles.grid_header_bottom} ${container.container_wrap}`}
-      >
-        <nav className={styles.nav_bar}>
-          <Link href="/" className={styles.link}>
-            home
+      <div className={styles.header_top}>
+        <div
+          className={`${styles.grid_header_top} ${container.container_wrap}`}
+        >
+          <Link href="/">
+            <Image
+              src="/logo-best-of-brazil.png"
+              alt="Logo Best of Brazil"
+              width={70}
+              height={70}
+              priority
+            />
           </Link>
-          <Link href="/products" className={styles.link}>
-            produtos
+
+          <div className={styles.search_bar}>
+            <input
+              type="text"
+              placeholder="Pesquisar"
+              value={query}
+              //chamando a função sempre que o valor alterar
+              onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onKeyDown={handleKeyDown}
+              className={styles.search_input}
+            />
+            <hr className={styles.search_hr} />
+            <i className={`${"fas fa-search"} ${styles.search_icon}`}></i>
+          </div>
+
+          <button onClick={openCart} className={styles.shop_btn}>
+            <i className="fa-solid fa-cart-shopping"></i>
+            <span>{cartItems.length}</span>
+          </button>
+
+          {!isFocused ? (
+            <></>
+          ) : (
+            <>
+              <div className={styles.result_serch}>
+                {query === "" ? <></> : <p>filtrar por:</p>}
+                {query === "" ? (
+                  <></>
+                ) : (
+                  <Link
+                    href={`/searchProducts/${query}`}
+                    className={styles.link_result}
+                  >
+                    <span>
+                      <i className={`${"fas fa-search"}`}></i>
+                      {query}
+                    </span>
+                  </Link>
+                )}
+                {filteredItems.length <= 0 ? (
+                  <></>
+                ) : (
+                  <p>produtos encontrados</p>
+                )}
+                {filteredItems.map((item) => (
+                  <Link
+                    href={`/product/${item.id}`}
+                    key={item.id}
+                    className={styles.link_result}
+                  >
+                    <span>
+                      <i className={`${"fas fa-search"}`}></i>
+                      {item.name}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* {cartItems.length === 0 ? (<span></span>) : (<span>{cartItems.length}</span>)} */}
+
+          <CartSidebar
+            isOpen={isCartOpen}
+            closeSidebar={closeCart}
+            cartItems={cartItems}
+          />
+        </div>
+      </div>
+      <div className={styles.header_bottom}>
+        <div
+          className={`${styles.grid_header_bottom} ${container.container_wrap}`}
+        >
+          <nav className={styles.nav_bar}>
+            <Link href="/" className={styles.link}>
+              home
+            </Link>
+            <Link href="/products" className={styles.link}>
+              produtos
+            </Link>
+            <Link href="/about" className={styles.link}>
+              sobre
+            </Link>
+            <Link href="/contact" className={styles.link}>
+              contato
+            </Link>
+            <Link href="/location" className={styles.link}>
+              localização
+            </Link>
+            <Link href="/partners" className={styles.link}>
+              lojas & parceiros
+            </Link>
+          </nav>
+        </div>
+      </div>
+      <div className={styles.header_top_responsive}>
+        <div
+          className={`${styles.grid_header_top} ${container.container_wrap}`}
+        >
+          <ResponsiveMenu></ResponsiveMenu>
+
+          <Link href="/">
+            <Image
+              src="/logo-best-of-brazil.png"
+              alt="Logo Best of Brazil"
+              width={70}
+              height={70}
+              priority
+            />
           </Link>
-          <Link href="/about" className={styles.link}>
-            sobre
-          </Link>
-          <Link href="/contact" className={styles.link}>
-            contato
-          </Link>
-          <Link href="/location" className={styles.link}>
-            localização
-          </Link>
-          <Link href="/partners" className={styles.link}>
-            lojas & parceiros
-          </Link>
-        </nav>
+
+          <button onClick={openCart} className={styles.shop_btn}>
+            <i className="fa-solid fa-cart-shopping"></i>
+            <span>{cartItems.length}</span>
+          </button>
+
+          {/* {cartItems.length === 0 ? (<span></span>) : (<span>{cartItems.length}</span>)} */}
+
+          <CartSidebar
+            isOpen={isCartOpen}
+            closeSidebar={closeCart}
+            cartItems={cartItems}
+          />
+        </div>
+      </div>
+      <div className={styles.header_bottom_responsive}>
+        <div
+          className={`${styles.grid_header_bottom} ${container.container_wrap}`}
+        >
+          <div className={styles.search_bar}>
+            <input
+              type="text"
+              placeholder="Pesquisar"
+              value={query}
+              //chamando a função sempre que o valor alterar
+              onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onKeyDown={handleKeyDown}
+              className={styles.search_input}
+            />
+            <hr className={styles.search_hr} />
+            <i className={`${"fas fa-search"} ${styles.search_icon}`}></i>
+          </div>
+
+          {!isFocused ? (
+            <></>
+          ) : (
+            <>
+              <div className={styles.result_serch}>
+                {query === "" ? <></> : <p>filtrar por:</p>}
+                {query === "" ? (
+                  <></>
+                ) : (
+                  <Link
+                    href={`/searchProducts/${query}`}
+                    className={styles.link_result}
+                  >
+                    <span>
+                      <i className={`${"fas fa-search"}`}></i>
+                      {query}
+                    </span>
+                  </Link>
+                )}
+                {filteredItems.length <= 0 ? (
+                  <></>
+                ) : (
+                  <p>produtos encontrados</p>
+                )}
+                {filteredItems.map((item) => (
+                  <Link
+                    href={`/product/${item.id}`}
+                    key={item.id}
+                    className={styles.link_result}
+                  >
+                    <span>
+                      <i className={`${"fas fa-search"}`}></i>
+                      {item.name}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </header>
   );
